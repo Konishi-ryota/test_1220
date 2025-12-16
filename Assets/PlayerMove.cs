@@ -4,10 +4,8 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 1.0f;
-    [SerializeField] GameObject muzzle;
     [SerializeField] GameObject bullet;
     [SerializeField] float shotInterval;
-    private float _shotTimer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,10 +22,5 @@ public class PlayerMove : MonoBehaviour
            Mathf.Clamp(transform.position.x + moveX, -8.5f, 8.5f),
            Mathf.Clamp(transform.position.y + moveY, -5f, 5f)
            );
-        if (Input.GetKey(KeyCode.Space) && _shotTimer < Time.time)
-        {
-            Instantiate(bullet,muzzle.transform.position,transform.rotation);
-            _shotTimer = Time.time + shotInterval;
-        }
     }
 }
