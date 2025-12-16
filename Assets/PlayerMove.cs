@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    public float PlayerHitBox;
+
     [SerializeField] float moveSpeed = 1.0f;
     [SerializeField] GameObject bullet;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -21,5 +23,9 @@ public class PlayerMove : MonoBehaviour
            Mathf.Clamp(transform.position.x + moveX, -8.5f, 8.5f),
            Mathf.Clamp(transform.position.y + moveY, -5f, 5f)
            );
+    }
+    public void OnEnemyHit()
+    {
+        Destroy(this);
     }
 }
