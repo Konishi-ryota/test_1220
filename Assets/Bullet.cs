@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public float BulletHitBox;
+
     [SerializeField] float bulletSpeed;
     private ObjectPool pool;
     public ObjectPool Pool { get => pool; set => pool = value; }
