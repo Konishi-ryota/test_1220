@@ -6,6 +6,7 @@ public class PlayerShot : MonoBehaviour
 
     private float _timer;
     private ObjectPool _bulletPool;
+    private Bullet _bullet;
     public void Init(ObjectPool pool)
     {
         _bulletPool = pool;
@@ -13,7 +14,7 @@ public class PlayerShot : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        Application.targetFrameRate = 60;
     }
 
     // Update is called once per frame
@@ -28,8 +29,8 @@ public class PlayerShot : MonoBehaviour
     
     private void Shot()
     {
-        Bullet bullet = _bulletPool.GetPooledObject();
-        bullet.transform.position = muzzle.transform.position;
-        bullet.transform .rotation = muzzle.transform.rotation;
+        _bullet = _bulletPool.GetPooledObject();
+        _bullet.transform.position = muzzle.transform.position;
+        _bullet.transform .rotation = muzzle.transform.rotation;
     }
 }
