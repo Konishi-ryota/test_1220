@@ -5,7 +5,6 @@ public class PlayerMove : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 1.0f;
     [SerializeField] GameObject bullet;
-    [SerializeField] float shotInterval;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
