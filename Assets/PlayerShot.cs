@@ -7,7 +7,7 @@ public class PlayerShot : MonoBehaviour
     private float _timer;
     private ObjectPool _bulletPool;
     private Bullet _bullet;
-    public void Init(ObjectPool pool)
+    public void ShotInit(ObjectPool pool)
     {
         _bulletPool = pool;
     }
